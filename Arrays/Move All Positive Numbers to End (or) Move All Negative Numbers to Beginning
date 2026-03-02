@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),count=0,index=0,tindex=0;
+		int arr[]=new int[n];
+		for(int i=0;i<n;arr[i++]=sc.nextInt());
+		int temp[]=new int[n];
+		for(int i=0;i<n;i++)
+		    temp[i]=arr[i];
+	    for(int i=0;i<n;i++){
+	        if(arr[i]<0){
+	            arr[index++]=arr[i];
+	            count++;
+	        }else if(arr[i]>=0)
+	            temp[tindex++]=arr[i];
+	    }
+	    index=0;
+	    for(int i=count;i<n;i++){
+	        arr[i]=temp[index++];
+	    }
+	    for(int i=0;i<n;System.out.print(arr[i++]+" "));
+	}
+}
+
+/*
+    i/p-> 
+            7
+            -1 -3 2 -2 4 1 -5
+    o/p->   -1 -3 -2 -5 2 4 1
+
+*/
