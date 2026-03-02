@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt(),n2=sc.nextInt(),temp=0,ans=0;
+		if(n1>n2)
+		    temp=n1;
+		else
+		    temp=n2;
+		for(int i=1;i<temp;i++){
+		    if(n1%i==0 && n2%i==0){
+		        ans=i;
+		    }
+		}
+		System.out.print(ans);
+	}
+}
