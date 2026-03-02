@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),temp=n,count=0,sqr=0,div=0;
+		while(temp!=0){
+		    count++;
+		    temp/=10;
+		}
+		sqr=n*n;
+		div=(int)Math.pow(10,count);
+		System.out.println(sqr+" % "+div+" = "+sqr%div);
+		System.out.print(sqr%div==n?"Automorphic Number":"Not an Automorphic Number");
+	}
+}
