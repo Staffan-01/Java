@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),og=n,ans=0,sqr=0;
+		sqr=n*n;
+		while(sqr!=0){
+		    ans+=sqr%10;
+		    sqr/=10;
+		}
+		System.out.println(ans==og?"Yes":"No");
+	}
+}
+
+
+/*Input : 9
+Output : Neon Number
+Explanation: square is 9*9 = 81 and 
+sum of the digits of the square is 9.
+Input :12
+Output : Not a Neon Number
+Explanation: square is 12*12 = 144 and 
+sum of the digits of the square is 9 (1 
++ 4 + 4) which is not equal to 12.*/
