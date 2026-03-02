@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        int N=sc.nextInt(),k=sc.nextInt(),a=N,cnt=0;
+        while(a>0){
+            cnt++;
+            a/=10;
+        }
+        k=k%cnt;
+        if(k<0){
+            k=k+cnt;
+        }
+        int div=(int)Math.pow(10,k);
+        int fp=N%div,lp=N/div;
+        int op=fp*(int)Math.pow(10,cnt-k)+lp;
+        System.out.println(op);
+	}
+}
