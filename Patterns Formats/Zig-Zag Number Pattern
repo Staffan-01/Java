@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),a=1;
+		for(int i=1;i<=n;i++){
+		    if(i%2!=0){
+    		    for(int j=0;j<n;j++){
+    		        if(a<10)
+    		            System.out.print((a++)+"  ");
+    		        else
+        		        System.out.print((a++)+" ");
+    		    }
+    		    System.out.println();
+		    }else{
+		        int temp=a+n-1;
+		        for(int j=0;j<n;j++){
+    		        if(temp<10)
+    		            System.out.print((temp)+"  ");
+    		        else
+        		        System.out.print((temp)+" ");
+        		    temp--;
+    		    }
+    		    a+=n;
+    		    System.out.println();
+		    }
+		}
+	}
+}
