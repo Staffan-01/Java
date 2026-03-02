@@ -1,0 +1,49 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt(),fin=n,temp=0,count=0;
+        boolean f=true;
+        temp=n*2;
+        count=0;
+        while(temp!=0) {
+            count++;
+            temp/=10;
+        }
+        int mp=(int)Math.pow(10,count);
+        fin=fin*mp+(n*2);
+        temp=n*3;
+        count=0;
+        while(temp!=0) {
+            count++;
+            temp/=10;
+        }
+        mp=(int)Math.pow(10,count);
+        fin=fin*mp+(n*3);
+        int seen=0;
+        count=0;
+        while(fin!=0) {
+            temp=fin%10;
+            if(temp==0) {
+                f=false;
+                break;
+            }
+            int check=seen;
+            while(check!=0) {
+                if(check%10==temp) {
+                    f=false;
+                    break;
+                }
+                check/=10;
+            }
+            if(!f)
+                break;
+            seen=seen*10+temp;
+            count++;
+            fin/=10;
+        }
+        if(count!=9)
+            f=false;
+        System.out.println(f?"Fascinating Number":"Not a Fascinating Number");
+    }
+}
