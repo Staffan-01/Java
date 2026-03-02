@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt(),n2=sc.nextInt(),temp=0,ans=0;
+		 while(n2!=0) {
+            temp=n2;
+            n2=n1%n2;
+            n1=temp;
+        }
+
+		System.out.print(n1==1?"Irreducible Number":"Not an Irreducible Number");
+	}
+}
