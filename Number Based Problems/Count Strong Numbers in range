@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main
+{
+    int fact(int n){
+        if(n==0||n==1)
+            return 1;
+        else{
+            return n*fact(n-1);
+        }
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Main ob=new Main();
+		int n=sc.nextInt(),og=n,count=0;
+		for(int i=100;i<=n;i++){
+		    int temp=i,ans=0;
+    		while(temp!=0){
+    		    ans+=ob.fact(temp%10);
+    		    temp/=10;
+    		}
+    		if(ans==i)
+    		    count++;
+		}
+        System.out.print(count);
+	}
+}
