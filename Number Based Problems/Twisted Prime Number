@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+    boolean prime(int n){
+        boolean f=true;
+        for(int i=2;i<=n/2;i++){
+		    if(n%i==0){
+		        f=false;
+		        break;
+		    }
+		}
+		return f;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Main ob=new Main();
+		int n=sc.nextInt(),temp=n,nr=0;
+		boolean c1=false,c2=false;
+		while(temp!=0){
+		    nr=nr*10+temp%10;
+		    temp/=10;
+		}
+		c1=ob.prime(n);
+		c2=ob.prime(nr);
+		System.out.print(c1&&c2?"Twisted Prime Number":"Not a Twisted Prime Number");
+	}
+}
