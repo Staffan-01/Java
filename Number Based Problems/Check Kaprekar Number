@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt(),n=num*num,temp=n,count=0,mp=10;
+        boolean f=false;
+        while (temp!=0) {
+            count++;
+            temp/=10;
+        }
+        for (int i=1;i<count;i++) {
+            int right=n%mp,left=n/mp;
+            if (right!=0&&(left+right==num)) {
+                f=true;
+                break;
+            }
+            mp*=10;
+        }
+        if(f)
+            System.out.println("Kaprekar Number");
+        else
+            System.out.println("Not Kaprekar Number");
+    }
+}
