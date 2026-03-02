@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),og=n,count=1,ans=0,rev=0;
+		while(n!=0){
+		    rev=rev*10+n%10;
+		    n/=10;
+		}
+		while(rev!=0){
+		    ans+=(int)Math.pow(rev%10,count++);
+		    rev/=10;
+		}
+		System.out.print(og==ans?"Yes":"No");
+	}
+}
