@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+    Boolean arm(int n){
+        int og=n,temp=n,count=0,ans=0;
+		while(temp!=0){
+		    count++;temp/=10;
+		}
+		while(n!=0){
+		    ans+=(int)Math.pow(n%10,count);
+		    n/=10;
+		}
+		if(ans==og)
+		    return true;
+		else
+		    return false;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Main ob=new Main();
+		int range=sc.nextInt(),count=0;
+		for(int i=100;i<=range;i++){
+		    if(ob.arm(i)){
+		        count++;
+		        System.out.println(i+" "+ob.arm(i));
+		    }
+		}
+		System.out.print(count);
+	}
+}
