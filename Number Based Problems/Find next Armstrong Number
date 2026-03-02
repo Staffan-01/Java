@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+    int arm(int n){
+        int og=n,temp=n,count=0,ans=0;
+		while(temp!=0){
+		    count++;temp/=10;
+		}
+		while(n!=0){
+		    ans+=(int)Math.pow(n%10,count);
+		    n/=10;
+		}
+		if(ans==og)
+		    return ans;
+		else
+		    return 0;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Main ob=new Main();
+		int n=sc.nextInt(),count=0;
+		while(true){
+		    if(ob.arm(n++)!=0){
+		        System.out.print(ob.arm(--n));
+		        break;
+		    }
+		}
+	}
+}
