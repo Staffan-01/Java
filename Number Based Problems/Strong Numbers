@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main
+{
+    int fact(int n){
+        if(n==0||n==1)
+            return 1;
+        else{
+            return n*fact(n-1);
+        }
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		Main ob=new Main();
+		int n=sc.nextInt(),og=n,ans=0;
+		while(n!=0){
+		    ans+=ob.fact(n%10);
+		    n/=10;
+		}
+		System.out.print(ans==og?"Strong Numbers":"Not Strong Numbers");
+        // System.out.print(ob.fact(4));
+	}
+}
