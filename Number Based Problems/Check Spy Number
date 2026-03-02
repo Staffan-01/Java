@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),temp=n,ans1=0,ans2=1;
+		while(n!=0){
+		    ans1+=n%10;
+		    n/=10;
+		}
+		while(temp!=0){
+		    ans2*=temp%10;
+		    temp/=10;
+		}
+		System.out.print(ans1==ans2?"Yes":"No");
+	}
+}
