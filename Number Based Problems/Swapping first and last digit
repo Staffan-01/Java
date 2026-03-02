@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt(),m=n,f=0,count=0,mp=0;
+		while(m!=0){
+		    count++;m/=10;
+		}
+		f=n%10;
+		n/=10;count-=2;
+		mp=(int)Math.pow(10,count);
+		int fp=n%(mp),lp=n/(mp);
+		f=(f*mp+fp)*10+lp;
+		System.out.print(f);
+	}
+}
